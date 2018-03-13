@@ -1,0 +1,7 @@
+(function ($){
+   jquery.fn.showidePlugin=function ()
+   {
+     //这是自定义的一个插件，使用这插件时，$('selector').showidePlugin();
+   }
+})(jquery);//如果更喜欢$而不是jquery，可以这样吧插件代码封装在一个自执
+   行的匿名函数中，就能够安全的在插件内使用$别名，不会引起任何问题

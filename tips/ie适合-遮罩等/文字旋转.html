@@ -1,0 +1,40 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>旋转文字  精彩无限</title>
+<script type="text/javascript">
+Phrase="常在河边走  就是不湿鞋"
+Balises=""
+Taille=40;
+Midx=100;
+Decal=0.5;
+Nb=Phrase.length;
+for (x=0;x<Nb;x++){
+  Balises=Balises + '<DIV Id=L' + x + ' STYLE="width:3;font-family: Courier New;font-weight:bold;position:absolute;top:40;left:5;z-index:0">' + Phrase.charAt(x) + '</DIV>'
+}
+document.write (Balises);
+Time=window.setInterval("Alors()",10);
+Alpha=5;
+I_Alpha=0.05;
+
+function Alors(){
+	Alpha=Alpha-I_Alpha;
+	for (x=0;x<Nb;x++){
+		Alpha1=Alpha+Decal*x;
+		Cosine=Math.cos(Alpha1);
+		Ob=document.all("L"+x);
+		Ob.style.posLeft=Midx+100*Math.sin(Alpha1)+200;
+		Ob.style.zIndex=20*Cosine;
+		Ob.style.fontSize=Taille+25*Cosine;
+		Ob.style.color="rgb("+ (233+Cosine*80+50) + ","+ (127+Cosine*80+50) + ",0)";
+	}
+}
+</script>
+<style type="text/css">
+body{background-color:red}
+</style>
+</head>
+<body>
+</body>
+</html>
